@@ -1,9 +1,10 @@
 def fib(n):
-    sum = 1
-    while(n > 0):
-        sum = sum * n
-        n -= 1
-    return sum
+    def aux(n, r):
+        if(n < 1):
+            return r
+        else:
+            return aux(n - 1, r * n)
+    return aux(n, 1)
 
 result = fib(10)
 print(result)
